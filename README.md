@@ -28,9 +28,9 @@ mkdir multiqc
 multiqc -o multiqc fastqc
 
 ### Статистика для первоначальных чтений
-<img src="Images/до1.png" width="800"/>
-<img src="Images/до2.png" width="800"/>
-<img src="Images/до3.png" width="800"/>
+<img src="Screenshots/до1.png" width="800"/>
+<img src="Screenshots/до2.png" width="800"/>
+<img src="Screenshots/до3.png" width="800"/>
 
 ### Используя platanus_trim и platanus_internal_trim подрезаем чтения по качеству и удаляем праймеры
 
@@ -59,9 +59,9 @@ rm R1_mate_pairs.fastq
 rm R2_mate_pairs.fastq
 
 ### Общая статистика для новых чтений
-<img src="Images/после1.png" width="800"/>
-<img src="Images/после2.png" width="800"/>
-<img src="Images/после3.png" width="800"/>
+<img src="Screenshots/после1.png" width="800"/>
+<img src="Screenshots/после2.png" width="800"/>
+<img src="Screenshots/после3.png" width="800"/>
 
 ### Сравнив результаты для изначальных и новых чтений, делаем выводы:
 
@@ -129,10 +129,10 @@ analysis_c(contig)
 
 ### Результат
 
-Общее количество контигов:  600
-Суммарная длина контигов:  3923404
-Длина самого длинного контига:  179304
-N50:  47798
+Общее количество контигов:  626
+Суммарная длина контигов:  3926502
+Длина самого длинного контига:  179307
+N50:  54903
 
 ### Анализ скаффолдов
 
@@ -142,20 +142,20 @@ analysis_s(scaffold)
 
 ### Результат
 
-Общее количество скаффолдов:  70
-Суммарная длина скаффолдов:  3872710
-Длина самого длинного скаффолда:  3831215
-N50:  3831215
+Общее количество скаффолдов:  69
+Суммарная длина скаффолдов:  3873334
+Длина самого длинного скаффолда:  3831631
+N50:  3831631
 
 ### Поиск наибольшего скаффолда
 
 for line in scaffold:
-    if int(line.split('_')[1][3:]) == 3831215:
+    if int(line.split('_')[1][3:]) == 3831631:
         print(line)
         break
 
 ### Записываем в файл
 
-echo scaffold1_len3831756_cov232 > max_scaffold.txt
+echo scaffold1_len3831631_cov231 > max_scaffold.txt
 
 seqtk subseq Poil_scaffold.fa max_scaffold.txt > max_scaffold.fa
